@@ -1,7 +1,8 @@
-import "./ItemListContainer.css"
 import { useEffect, useState } from "react";
 import getPorducts from "../../data/products.js";
-import Item from "../Item/Item.jsx";
+import ItemList from "../ItemList/ItemList";
+import Item from "../Item/Item";
+import "./ItemListContainer.css"
 
 const ItemListContainer = ({ saludo }) => {
     const [products, setProducts] = useState([]);
@@ -21,13 +22,7 @@ const ItemListContainer = ({ saludo }) => {
     return (
         <div>
             <h2>Bienvenido a mi Ecommerce</h2> 
-            <ul>
-                {
-                    products.map((product)=>(
-                        <Item product={product} key={product.id} />
-                    ))
-                }
-            </ul>
+            <ItemList products={products} />
         </div>
     )
 }
