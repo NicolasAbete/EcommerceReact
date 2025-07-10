@@ -1,19 +1,260 @@
+/* NavBar.css */
 .navbar {
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
 }
 
-.navbar .logo{
-    width: 150px;
-    height: 150px;
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    gap: 20px;
 }
 
-.categories{
+/* Logo y Brand */
+.brand-section {
     display: flex;
-} 
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+}
 
-.categories li{
-    padding: 0 20px;
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.brand-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(45deg, #fff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Barra de búsqueda */
+.search-section {
+    flex: 0 1 350px;
+    max-width: 350px;
+    position: relative;
+}
+
+.search-container {
+    position: relative;
+    width: 90%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 45px 12px 16px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input:focus {
+    background: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.search-button {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 14px;
+}
+
+.search-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Navegación de categorías */
+.categories {
+    display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 6px;
+    flex: 0 1 auto;
+}
+
+.category-item {
+    position: relative;
+}
+
+.category-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+}
+
+.category-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección de usuario */
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 120px;
+    justify-content: flex-end;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-button {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .categories {
+        gap: 4px;
+    }
+    
+    .category-link {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .search-section {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 900px) {
+    .categories {
+        display: none;
+    }
+    
+    .search-section {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 10px 15px;
+        gap: 15px;
+    }
+    
+    .brand-section {
+        min-width: auto;
+    }
+    
+    .brand-text {
+        font-size: 20px;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .search-input {
+        padding: 10px 40px 10px 14px;
+        font-size: 13px;
+    }
+    
+    .user-actions {
+        gap: 8px;
+    }
+    
+    .user-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .search-section {
+        order: 3;
+        width: 100%;
+        max-width: none;
+    }
+    
+    .user-actions {
+        display: none;
+    }
+    
+    .brand-text {
+        display: none;
+    }
 }

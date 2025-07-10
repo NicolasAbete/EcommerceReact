@@ -9,11 +9,10 @@ function App() {
   const saludo = "Hola Mundo"
 
   return (
-  <>
+  
     <div className="app-container">
           <NavBar />
-          <ItemListContainer saludo={ "Bienvenido a mi Ecommerce con React" } />
-          <ItemListContainer saludo={ "Aprendiendo a reutilizar componentes usando props" } />
+          <ItemListContainer  />
           <div className="card">
             <p>
               Aprendiendo a usar ReactJs
@@ -21,7 +20,7 @@ function App() {
           </div>
       </div>
     
-  </>
+  
   )
 }
 
