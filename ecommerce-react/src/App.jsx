@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     const saludo = "Productos destacados";
@@ -16,22 +18,24 @@ function App() {
     };
 
     return (
+      <BrowserRouter>
         <div className="app-container">
-            <NavBar 
+        <NavBar 
                 onSearch={handleSearch} 
                 onClearSearch={clearSearch}
                 searchQuery={searchQuery}
-            />
-            <ItemListContainer 
-                saludo={saludo} 
-                searchQuery={searchQuery}
-            />
-            <div className="card">
-                <p>
-                    Aprendiendo a usar ReactJs
-                </p>
-            </div>
+          />
+
+        <Routes>
+          <Route path="/" element={<ItemListContainer saludo={saludo} searchQuery={searchQuery}/>} />
+            <Route path="/category/:category" element={<ItemListContainer/>}/>
+            <Route path="/detail/:productId" element={<ItemDetailContainer />} />
+          </Routes>
+
         </div>
+      </BrowserRouter>
+
+
     );
 }
 

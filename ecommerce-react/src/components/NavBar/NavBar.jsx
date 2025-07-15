@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./NavBar.css";
 import ecommerceLogo from "../../assets/ecommerceLogo.png";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ onSearch, onClearSearch, searchQuery }) => {
     const [inputValue, setInputValue] = useState("");
@@ -33,10 +34,13 @@ const NavBar = ({ onSearch, onClearSearch, searchQuery }) => {
         <nav className="navbar">
             <div className="navbar-container">
                 {/* Sección de Brand/Logo */}
+                <Link to="/">
                 <div className="brand-section">
                     <img className="logo" src={ecommerceLogo} alt="Logo" />
                     <a href="#" className="brand-text">TechStore</a>
                 </div>
+                </Link>
+
                 
                 {/* Sección de Búsqueda */}
                 <div className="search-section">
@@ -66,16 +70,13 @@ const NavBar = ({ onSearch, onClearSearch, searchQuery }) => {
                 {/* Categorías */}
                 <ul className="categories">
                     <li className="category-item">
-                        <a href="#" className="category-link">Electrónicos</a>
+                        <Link to="/category/PerifericosGamer"> <a href="" className="category-link">PerifericosGamer</a> </Link>
                     </li>
                     <li className="category-item">
-                        <a href="#" className="category-link">Ropa</a>
+                        <Link to="/category/TVs"> <a href="" className="category-link">TVs</a> </Link>
                     </li>
                     <li className="category-item">
-                        <a href="#" className="category-link">Hogar</a>
-                    </li>
-                    <li className="category-item">
-                        <a href="#" className="category-link">Deportes</a>
+                        <Link to="/category/Tecnologia"> <a href="#" className="category-link">Tecnologia</a></Link>
                     </li>
                 </ul>
                 

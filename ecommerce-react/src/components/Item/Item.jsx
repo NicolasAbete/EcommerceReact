@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Item.css"
 
 const Item = ({ product }) => {
@@ -11,7 +12,9 @@ const Item = ({ product }) => {
     return (
         <li className="item">
             <div className="img-item-container">
+            <Link to={ "/detail/" + product.id }>
                 <img className="img-item" src={product.image} alt={product.name} />
+            </Link>
             </div>
             <div className="text-item"> 
                 <p className="title-item">{product.name}</p>

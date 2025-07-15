@@ -3,9 +3,11 @@ import useProducts from "../../hooks/useProducts.js";
 import Loading from "../Loading/Loading";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ saludo = "Bienvenido a nuestra tienda", searchQuery = "" }) => {
-    const { products, loading } = useProducts();
+    const { category } = useParams();
+    const { products, loading } = useProducts(category);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     // Función para filtrar productos
@@ -17,7 +19,7 @@ const ItemListContainer = ({ saludo = "Bienvenido a nuestra tienda", searchQuery
         return productList.filter((product) => {
             const searchTerm = query.toLowerCase();
             return product.name.toLowerCase().includes(searchTerm) ||
-                   product.description.toLowerCase().includes(searchTerm);
+                    product.description.toLowerCase().includes(searchTerm);
         });
     };
 
