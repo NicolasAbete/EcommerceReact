@@ -4,7 +4,7 @@ const products = [
         name:"Teclado",
         description: "Teclado con RGB gamer",
         stock: 5,
-        image:"",
+        image:"/img/kumarak552.webp",
         price:250,
     },
     {
@@ -12,7 +12,7 @@ const products = [
         name:"Mouse logitech",
         description: "MouseG305 gamer",
         stock: 10,
-        image:"",
+        image:"/img/mouseg305.webp",
         price:100,
     },
     {
@@ -20,7 +20,7 @@ const products = [
         name:"TV smart samsung",
         description: "Television smart de 70pulgadas",
         stock: 12,
-        image:"",
+        image:"/img/tv.webp",
         price:300,
     },
     {
@@ -28,7 +28,7 @@ const products = [
         name:"SmartWatch",
         description: "Reloj Smart Watch apple",
         stock: 4,
-        image:"",
+        image:"/img/applewatch.webp",
         price:400,
     },
     {
@@ -36,7 +36,7 @@ const products = [
         name:"Auriculares G733",
         description: "Auriculares gamer Logitethc G733 con RGB",
         stock: 15,
-        image:"",
+        image:"/img/g733.webp",
         price:300,
     }
 ];
