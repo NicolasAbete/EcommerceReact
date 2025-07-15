@@ -21,6 +21,28 @@
     margin: 0;
 }
 
+/* Estilos para mensaje de no resultados */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.no-results p {
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.no-results p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .products-grid {
@@ -31,11 +53,33 @@
     .item-list-container {
         padding: 15px;
     }
+    
+    .item-list-container h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .no-results {
+        padding: 40px 15px;
+    }
+    
+    .no-results p:first-child {
+        font-size: 16px;
+    }
+    
+    .no-results p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 10px;
+    }
+    
+    .item-list-container h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
     }
 }

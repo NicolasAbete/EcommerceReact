@@ -1,4 +1,5 @@
 import Item from "../Item/Item"
+import hocFilterProducts from "../../hoc/hocFilterProducts";
 
 const ItemList = ({ products = [] }) => {
     return (
@@ -12,4 +13,6 @@ const ItemList = ({ products = [] }) => {
     )
 }
 
-export default ItemList
+const ItemListWithSearch = hocFilterProducts(ItemList);
+
+export { ItemList, ItemListWithSearch };

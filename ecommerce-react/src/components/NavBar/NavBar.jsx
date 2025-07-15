@@ -1,15 +1,35 @@
+import { useState, useEffect } from "react";
 import "./NavBar.css";
-import ecommerceLogo from "../../assets/ecommerceLogo.png"
+import ecommerceLogo from "../../assets/ecommerceLogo.png";
 import CartWidget from "../CartWidget/CartWidget";
 
-const NavBar = () => {
+const NavBar = ({ onSearch, onClearSearch, searchQuery }) => {
+    const [inputValue, setInputValue] = useState("");
+
+    // Sincronizar input con searchQuery del parent
+    useEffect(() => {
+        setInputValue(searchQuery);
+    }, [searchQuery]);
+
     const handleSearch = (e) => {
         e.preventDefault();
-        // Aquí puedes agregar la lógica de búsqueda
-        console.log("Buscando...");
+        onSearch(inputValue);
     };
 
-    return(
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setInputValue(value);
+        
+        // Búsqueda en tiempo real
+        onSearch(value);
+    };
+
+    const handleClearSearch = () => {
+        setInputValue("");
+        onClearSearch();
+    };
+
+    return (
         <nav className="navbar">
             <div className="navbar-container">
                 {/* Sección de Brand/Logo */}
@@ -25,10 +45,21 @@ const NavBar = () => {
                             type="text" 
                             className="search-input" 
                             placeholder="Buscar productos, marcas y más..."
+                            value={inputValue}
+                            onChange={handleInputChange}
                         />
                         <button type="submit" className="search-button">
                             🔍
                         </button>
+                        {inputValue && (
+                            <button 
+                                type="button" 
+                                className="clear-search-button"
+                                onClick={handleClearSearch}
+                            >
+                                ✕
+                            </button>
+                        )}
                     </form>
                 </div>
                 
@@ -58,7 +89,7 @@ const NavBar = () => {
                 </div>
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default NavBar;

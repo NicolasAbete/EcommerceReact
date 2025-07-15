@@ -1,5 +1,7 @@
 import "./CartWidget.css"
 import carrito from "../../assets/carrito.png";
+import { PiShoppingCartFill } from "react-icons/pi";
+
 
 const CartWidget = () => {
     const itemCount = 0; // Esto vendría de tu estado global del carrito
@@ -15,14 +17,8 @@ const CartWidget = () => {
             onClick={handleCartClick}
             data-tooltip="Ver carrito"
         >
-            <img 
-                src={carrito} 
-                className="cart-icon" 
-                alt="Carrito de compras" 
-            />
-            <span className={`cart-count ${itemCount === 0 ? 'zero' : ''}`}>
-                {itemCount}
-            </span>
+            <PiShoppingCartFill size={30}/> 
+            
         </div>
     )
 }
