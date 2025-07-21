@@ -4,11 +4,13 @@ import Loading from "../Loading/Loading";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
+import { useSearch } from "../../context/SearchContext";
 
-const ItemListContainer = ({ saludo = "Bienvenido a nuestra tienda", searchQuery = "" }) => {
+const ItemListContainer = ({ saludo = "Bienvenido a nuestra tienda" }) => {
     const { category } = useParams();
     const { products, loading } = useProducts(category);
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const { searchQuery } = useSearch();
 
     // Función para filtrar productos
     const filterProducts = (productList, query) => {

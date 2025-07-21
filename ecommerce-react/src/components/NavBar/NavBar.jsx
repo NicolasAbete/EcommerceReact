@@ -3,18 +3,20 @@ import "./NavBar.css";
 import ecommerceLogo from "../../assets/ecommerceLogo.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import { useSearch } from "../../context/SearchContext";
 
-const NavBar = ({ onSearch, onClearSearch, searchQuery }) => {
+const NavBar = () => {
     const [inputValue, setInputValue] = useState("");
+    const { searchQuery, updateSearchQuery, clearSearch } = useSearch();
 
-    // Sincronizar input con searchQuery del parent
+    // Sincronizar input con searchQuery del context
     useEffect(() => {
         setInputValue(searchQuery);
     }, [searchQuery]);
 
     const handleSearch = (e) => {
         e.preventDefault();
-        onSearch(inputValue);
+        updateSearchQuery(inputValue);
     };
 
     const handleInputChange = (e) => {
@@ -22,12 +24,12 @@ const NavBar = ({ onSearch, onClearSearch, searchQuery }) => {
         setInputValue(value);
         
         // Búsqueda en tiempo real
-        onSearch(value);
+        updateSearchQuery(value);
     };
 
     const handleClearSearch = () => {
         setInputValue("");
-        onClearSearch();
+        clearSearch();
     };
 
     return (

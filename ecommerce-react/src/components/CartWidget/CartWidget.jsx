@@ -1,10 +1,12 @@
 import "./CartWidget.css"
 import carrito from "../../assets/carrito.png";
 import { PiShoppingCartFill } from "react-icons/pi";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 
 const CartWidget = () => {
-    const itemCount = 0; // Esto vendría de tu estado global del carrito
+    const { cart } = useContext(CartContext);
     
     const handleCartClick = () => {
         // Aquí puedes agregar la lógica para abrir el carrito
