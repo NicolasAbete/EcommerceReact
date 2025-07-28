@@ -39,7 +39,6 @@ const NavBar = () => {
                 <Link to="/">
                 <div className="brand-section">
                     <img className="logo" src={ecommerceLogo} alt="Logo" />
-                    <a href="#" className="brand-text">TechStore</a>
                 </div>
                 </Link>
 
