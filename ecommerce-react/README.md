@@ -1,12 +1,14 @@
-# React + Vite
+# Nicolas Abete
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mi proyecto es un ecommerce de productos tecnologicos tanto de tipo gamer como de uso casual en la vida,
+por eso las categorias de mi ecommerce son perifericosGamer, Tvs y Tecnologia, que esta ultima engloba los productos de uso cotidano de la misma.
 
-Currently, two official plugins are available:
+Es el primer ecommerce que diseño y programo desde cero con ReactJS y considero que es un proyecto muy escalable y con buenas practicas en codigo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologias utilizadas
+"firebase": "^12.0.0",
+"react": "^19.1.0",
+"react-dom": "^19.1.0",
+"react-icons": "^5.5.0",
+"react-router-dom": "^7.6.3",
+"react-spinners": "^0.17.0"
