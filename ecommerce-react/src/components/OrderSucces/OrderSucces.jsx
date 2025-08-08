@@ -29,7 +29,7 @@ const OrderSuccess = ({ orderId }) => {
                     {/* Card del ID de orden */}
                     <div className="order-id-card">
                         <div className="order-id-header">
-                            <span className="order-id-label">ID de tu orden:{orderId}</span>
+                            <span className="order-id-label">ID de tu orden: {orderId} </span>
                         </div>
                         <div className="order-id-content">
                             <span className="order-id-value">{orderId}</span>
